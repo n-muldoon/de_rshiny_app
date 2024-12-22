@@ -10,7 +10,7 @@ library(readr)
 library(tidyverse)
 library(DESeq2)
 
-norm_counts<-read.csv('NIHMS647083-supplement-2.csv',header=TRUE)
+norm_counts<-read.delim('GSE64403_FPKM_table.txt',sep='\t',header=TRUE)
 gene_to_geneid<-norm_counts%>%select(Gene,GeneID)
 norm_counts<-as_tibble(norm_counts)%>%
   select(-Coordinates)%>%
